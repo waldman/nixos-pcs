@@ -105,7 +105,7 @@
   services.cron = {
     enable = true;
     systemCronJobs = [
-      "*/10 * * * * root curl https://raw.githubusercontent.com/waldman/nixos-pcs/master/regular-users/marina-rafaela/configuration.nix -o /etc/nixos/configuration.nix && nixos-rebuild switch" # Run Automation every 10 minutes
+      "*/10 * * * * root curl --silent https://raw.githubusercontent.com/waldman/nixos-pcs/master/regular-users/marina-rafaela/configuration.nix -o /etc/nixos/configuration.nix && nixos-rebuild switch" # Run Automation every 10 minutes
     ];
   };
 
@@ -114,7 +114,7 @@
 
   # Aliases
   environment.interactiveShellInit = ''
-    alias run="sudo curl https://raw.githubusercontent.com/waldman/nixos-pcs/master/regular-users/marina-rafaela/configuration.nix -o /etc/nixos/configuration.nix && sudo nixos-rebuild switch"
+    alias run="sudo curl --silent https://raw.githubusercontent.com/waldman/nixos-pcs/master/regular-users/marina-rafaela/configuration.nix -o /etc/nixos/configuration.nix && sudo nixos-rebuild switch"
     alias upgrade="sudo nix-channel --update && sudo nixos-rebuild switch"
   '';
 
