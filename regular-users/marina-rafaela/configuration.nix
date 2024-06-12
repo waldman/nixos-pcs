@@ -105,7 +105,7 @@
   services.cron = {
     enable = true;
     systemCronJobs = [
-      "*/10 * * * * curl https://raw.githubusercontent.com/waldman/nixos-pcs/master/regular-users/marina-rafaela/configuration.nix -o /etc/nixos/configuration.nix && nixos-rebuild switch" # Run Automation every 10 minutes
+      "*/10 * * * * root curl https://raw.githubusercontent.com/waldman/nixos-pcs/master/regular-users/marina-rafaela/configuration.nix -o /etc/nixos/configuration.nix && nixos-rebuild switch" # Run Automation every 10 minutes
     ];
   };
 
