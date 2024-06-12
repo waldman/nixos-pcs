@@ -84,7 +84,7 @@
   users.users.nina = {
     isNormalUser = true;
     description = "Marina";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "input"];
     packages = with pkgs; [
       chromium
       vlc
@@ -110,6 +110,15 @@
       "*/10 * * * * curl https://raw.githubusercontent.com/waldman/nixos-pcs/master/regular-users/marina-rafaela/configuration.nix -o /etc/nixos/configuration.nix && nixos-rebuild switch" # Run Automation every 10 minutes
     ];
   };
+
+  # Sudo without password
+  security.sudo.wheelNeedsPassword = false;
+
+  # Aliases
+  environment.interactiveShellInit = ''
+    alias run="sudo curl https://raw.githubusercontent.com/waldman/nixos-pcs/master/regular-users/marina-rafaela/configuration.nix -o /etc/nixos/configuration.nix && sudo nixos-rebuild switch"
+    alias upgrade="sudo nix-channel --update && sudo nixos-rebuild switch"
+  '';
 
   # Enable GPaste
   programs.gpaste.enable = true;
