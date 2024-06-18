@@ -51,12 +51,12 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "alt-intl";
+    layout = "br";
+    xkbVariant = "abnt2";
   };
 
   # Configure console keymap
-  console.keyMap = "dvorak";
+  console.keyMap = "br-abnt2";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
