@@ -96,6 +96,7 @@
       keepassxc
       gimp
       libreoffice
+      ardour
       gnomeExtensions.appindicator
       gnomeExtensions.just-perfection
       gnomeExtensions.tray-icons-reloaded
